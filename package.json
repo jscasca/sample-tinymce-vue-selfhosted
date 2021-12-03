@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "tiny": "rsync -a node_modules/tinymce public/ ; rsync -a fake_plugin public/tinymce/plugins/",
+    "serve": "yarn tiny && vue-cli-service serve",
+    "build": "yarn tiny && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^4.0.5",
     "core-js": "^3.6.5",
+    "tinymce": "^5.10.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {
